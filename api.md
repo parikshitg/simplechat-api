@@ -10,7 +10,7 @@
 }
 ```
 
-### Struct UserProfile
+### Struct User
 ```
 {
     "id": string,
@@ -31,7 +31,7 @@ Endpoint ```/register```
 
 ```
 {
-    "email": "<email address>"
+    "email": string
 }
     
 ```
@@ -40,7 +40,7 @@ Endpoint ```/register```
 ```
 {
     "status": Status,
-    "auth_token": "<token>"
+    "auth_token": string
 }
     
 ```
@@ -53,8 +53,8 @@ Endpoint ```/login```
 ### LoginRequest
 ```
 {
-    "auth_token": "<token>",
-    "password": "<password>"    
+    "auth_token": string,
+    "password": string    
 }
 ```
 
@@ -62,19 +62,19 @@ Endpoint ```/login```
 ```
 {
     "status": Status,
-    "access_token": "<token>"
+    "access_token": string
 }
 ```
 
-## 3. Profile
+## 3. User Profile
 
 Endpoint ```/profile```
 
 ### ProfileRequest
 ```
 {
-    "access_token": "<token">,
-    "id": "<profile id>"
+    "access_token": string,
+    "id": string
 }
 ```
 
@@ -82,8 +82,26 @@ Endpoint ```/profile```
 ```
 {
     "status": Status,
-    "profile": UserProfile,
+    "profile": User,
 }
 ```
 
 
+## 4. Friend List
+
+Endpoint ```/friends```
+
+### FriendListRequest
+```
+{
+    "access_token": string,
+}
+```
+
+### FriendListResponse
+```
+{
+    "status": Status,
+    "friends": []User
+}
+```
