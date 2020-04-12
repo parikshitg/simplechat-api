@@ -1,27 +1,30 @@
 # API Specification
 
+
 ## 1 Register
 
-Endpoint ```	/register```
+Endpoint ```/register```
 
 ### RegisterRequest
 
 ```
 {
-	"email": "<email address>"
+    "email": "<email address>"
 }
-	
+    
 ```
 
 ### RegisterResponse
 ```
 {
-	"status": "<status>",
-	"auth_token": "<token>"
+    "status": {
+        "success": false,
+        "error": "<error message>"
+    },
+    "auth_token": "<token>"
 }
-	
+    
 ```
-
 
 
 ## 2 Login
@@ -31,15 +34,18 @@ Endpoint ```/login```
 ### LoginRequest
 ```
 {
-	"auth_token": "<token>",
-	"password": "<password>"	
+    "auth_token": "<token>",
+    "password": "<password>"    
 }
 ```
 
 ### LoginResponse
 ```
 {
-	"status": "<status>",
-	"access_token": "<token>"
+    "status": {
+        "success": false,
+        "error": "<error message>"
+    },
+    "access_token": "<token>"
 }
 ```
