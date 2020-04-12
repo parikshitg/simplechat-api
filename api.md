@@ -1,7 +1,29 @@
-# API Specification
+# SimpleChat API Specification
+
+## Structures
+
+### Struct Status
+```
+{
+    "success": bool,
+    "error": string,
+}
+```
+
+### Struct UserProfile
+```
+{
+    "id": string,
+    "name": string,
+    "email:" string
+    "photo": string,
+} 
+```
 
 
-## 1 Register
+# API
+
+## 1. Register
 
 Endpoint ```/register```
 
@@ -17,17 +39,14 @@ Endpoint ```/register```
 ### RegisterResponse
 ```
 {
-    "status": {
-        "success": false,
-        "error": "<error message>"
-    },
+    "status": Status,
     "auth_token": "<token>"
 }
     
 ```
 
 
-## 2 Login
+## 2. Login
 
 Endpoint ```/login```
 
@@ -42,10 +61,29 @@ Endpoint ```/login```
 ### LoginResponse
 ```
 {
-    "status": {
-        "success": false,
-        "error": "<error message>"
-    },
+    "status": Status,
     "access_token": "<token>"
 }
 ```
+
+## 3. Profile
+
+Endpoint ```/profile```
+
+### ProfileRequest
+```
+{
+    "access_token": "<token">,
+    "id": "<profile id>"
+}
+```
+
+### ProfileResponse
+```
+{
+    "status": Status,
+    "profile": UserProfile,
+}
+```
+
+
