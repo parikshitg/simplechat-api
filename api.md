@@ -1,5 +1,4 @@
 # API Specification
-===================
 
 ## 1 Register
 
