@@ -1,1 +1,1 @@
-# simplechat-api
+# simplechat-api-spec
